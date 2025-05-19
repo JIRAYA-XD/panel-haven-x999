@@ -63,17 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated gaming theme colors for white and purple
+				// Updated for black and white theme with purple accents
 				neon: {
-					blue: '#9B87F5', // Changed to purple
+					blue: '#9B87F5', // Purple accent
 					purple: '#7E69AB', // Darker purple
 					red: '#ea384c'
 				},
 				gaming: {
-					dark: '#FFFFFF', // Changed to white
-					card: '#F5F5F7', // Light gray/white
-					accent: '#F0F0F5', // Very light gray/white
-					panel: 'rgba(250, 250, 255, 0.95)' // Almost white with slight purple tint
+					dark: '#111111', // Very dark gray (almost black)
+					card: '#1A1A1A', // Dark gray
+					accent: '#222222', // Slightly lighter gray
+					panel: 'rgba(25, 25, 25, 0.95)' // Nearly black with slight transparency
 				}
 			},
 			borderRadius: {
@@ -126,6 +126,17 @@ export default {
 				'spin-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
+				},
+				// Water/floating effect
+				'ripple': {
+					'0%': { transform: 'scale(1)', opacity: '0.5' },
+					'100%': { transform: 'scale(1.5)', opacity: '0' }
+				},
+				'galaxy-float': {
+					'0%, 100%': { transform: 'translate(0, 0)' },
+					'25%': { transform: 'translate(5px, -5px)' },
+					'50%': { transform: 'translate(0, -10px)' },
+					'75%': { transform: 'translate(-5px, -5px)' }
 				}
 			},
 			animation: {
@@ -137,7 +148,9 @@ export default {
 				'slide-in': 'slide-in 0.5s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
 				'bounce': 'bounce 2s infinite',
-				'spin-slow': 'spin-slow 8s linear infinite'
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'ripple': 'ripple 2s linear infinite',
+				'galaxy-float': 'galaxy-float 8s ease-in-out infinite'
 			}
 		}
 	},
