@@ -63,17 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Gaming theme colors
+				// Updated gaming theme colors for white and purple
 				neon: {
-					blue: '#1EAEDB',
-					purple: '#9b87f5',
+					blue: '#9B87F5', // Changed to purple
+					purple: '#7E69AB', // Darker purple
 					red: '#ea384c'
 				},
 				gaming: {
-					dark: '#121212',
-					card: '#1A1F2C',
-					accent: '#222222',
-					panel: 'rgba(30, 32, 40, 0.95)'
+					dark: '#FFFFFF', // Changed to white
+					card: '#F5F5F7', // Light gray/white
+					accent: '#F0F0F5', // Very light gray/white
+					panel: 'rgba(250, 250, 255, 0.95)' // Almost white with slight purple tint
 				}
 			},
 			borderRadius: {
@@ -100,22 +100,44 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 5px rgba(30, 174, 219, 0.5), 0 0 15px rgba(30, 174, 219, 0.3)' 
+						boxShadow: '0 0 5px rgba(155, 135, 245, 0.5), 0 0 15px rgba(155, 135, 245, 0.3)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 20px rgba(30, 174, 219, 0.8), 0 0 30px rgba(30, 174, 219, 0.5)' 
+						boxShadow: '0 0 20px rgba(155, 135, 245, 0.8), 0 0 30px rgba(155, 135, 245, 0.5)' 
 					}
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				// New animations
+				'slide-in': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'bounce': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-glow': 'pulse-glow 3s infinite',
-				'float': 'float 6s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				// New animations
+				'slide-in': 'slide-in 0.5s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'bounce': 'bounce 2s infinite',
+				'spin-slow': 'spin-slow 8s linear infinite'
 			}
 		}
 	},

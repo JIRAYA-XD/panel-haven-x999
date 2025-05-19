@@ -14,9 +14,9 @@ const ProductPage = () => {
 
   if (!panel) {
     return (
-      <div className="min-h-screen bg-gaming-dark text-white flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-gaming-dark text-foreground flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-4">Panel Not Found</h1>
-        <p className="text-gray-400 mb-8">The panel you're looking for doesn't exist.</p>
+        <p className="text-gray-600 mb-8">The panel you're looking for doesn't exist.</p>
         <Button onClick={() => navigate("/")} className="bg-neon-blue hover:bg-neon-blue/80">
           Back to Home
         </Button>
@@ -30,7 +30,7 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gaming-dark text-white flex flex-col">
+    <div className="min-h-screen bg-gaming-dark text-foreground flex flex-col animate-fade-in">
       <Navbar />
       <main className="flex-grow pt-28 pb-20">
         <div className="container mx-auto px-4">
@@ -46,8 +46,8 @@ const ProductPage = () => {
               </div>
 
               {/* Product Details */}
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 font-['Orbitron'] text-white">
+              <div className="animate-slide-in">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 font-['Orbitron'] text-gray-800">
                   {panel.name}
                 </h1>
                 <div className="mb-6">
@@ -55,20 +55,20 @@ const ProductPage = () => {
                     ${panel.price.toFixed(2)}
                   </span>
                 </div>
-                <p className="text-gray-300 mb-8">
+                <p className="text-gray-700 mb-8">
                   {panel.description}
                 </p>
                 
                 {/* Features */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-bold mb-4 font-['Orbitron'] text-white">
+                  <h3 className="text-xl font-bold mb-4 font-['Orbitron'] text-gray-800">
                     Features
                   </h3>
                   <ul className="space-y-3">
                     {panel.features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-3">
+                      <li key={index} className="flex items-center gap-3 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                         <CheckCircle className="h-5 w-5 text-neon-blue flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                        <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -83,8 +83,8 @@ const ProductPage = () => {
                 </Button>
                 
                 {/* Additional Info */}
-                <div className="mt-8 border-t border-gray-700 pt-6">
-                  <p className="text-gray-400 text-sm">
+                <div className="mt-8 border-t border-gray-300 pt-6">
+                  <p className="text-gray-600 text-sm">
                     * By purchasing this panel, you agree to our Terms of Service and Privacy Policy.
                   </p>
                 </div>
